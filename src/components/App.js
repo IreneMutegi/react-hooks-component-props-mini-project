@@ -1,13 +1,20 @@
 import React from "react";
 import blogData from "../data/blog";
-
-console.log(blogData);
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList";
 
 function App() {
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      {/* Pass the blog name to the Header */}
+      <Header name={blogData.name} />
+
+      {/* Pass the image and about text to the About component */}
+      <About image={blogData.image} about={blogData.about} />
+
+      {/* Pass the posts array to the ArticleList */}
+      <ArticleList posts={blogData.posts} />
     </div>
   );
 }
